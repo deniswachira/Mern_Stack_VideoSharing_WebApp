@@ -12,35 +12,21 @@ const Container = styled.div`
 `;
 
 const Home = ({type}) => {
-  // const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState([]);
 
-  // useEffect(()=>{
-  //   const fetchVideos = async () =>{
-  //     const res = await axios.get(`/videos/${type}`);
-  //     setVideos(res.data);
-  //   }
-  //   fetchVideos();
-  // },[type])
+  useEffect(()=>{
+    const fetchVideos = async () =>{
+      const res = await axios.get(`/videos/${type}`);
+      setVideos(res.data);
+    }
+    fetchVideos();
+  },[type])
 
   return (
-    <Container>
-         
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-
+    <Container> 
+      {videos.map((video)=>(
+       <Card key={video._id} video={video}/>
+      ))}
     </Container>
   );
 };
