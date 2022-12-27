@@ -126,7 +126,7 @@ const Upload = ({setOpen}) => {
 
     const handleUpload = async (e)=>{
         e.peventDefault();
-        const res = await axios.post(`/videos`, {...inputs, tags})
+        const res = await axios.post("/videos", {...inputs, tags})
         setOpen(false) 
         res.status = 200 && navigate(`/video/${res.data._id}`)
     }
@@ -137,7 +137,8 @@ const Upload = ({setOpen}) => {
             <Close onClick={()=>setOpen(false)}>X</Close>
             <Title>Upload a New Video</Title>
             <Label>Video:</Label>
-               {videoPerc > 0 ? ("Uploading:" + videoPerc + "% done") : (
+               {videoPerc > 0 ? (
+                "Uploading:" + videoPerc + "% done") : (
             <Input 
                 type="file" 
                 accept="video/*" 

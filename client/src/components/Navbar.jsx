@@ -65,6 +65,7 @@ const User = styled.div`
     gap: 10px;
     font-weight: 500; 
     color:${({theme})=>theme.text};
+    cursor: pointer;
     `;
 const Avatar = styled.img`
     width: 32px;

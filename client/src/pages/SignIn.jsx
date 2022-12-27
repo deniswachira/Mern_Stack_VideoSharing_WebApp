@@ -89,11 +89,23 @@ const SignIn = () => {
   };
 
   const signInWithGoogle =() =>{
+    dispatch(loginStart())
     signInWithPopup(auth,provider)
     .then((result)=>{
-      console.log(result)
+      axios
+      .post("auth/google-signin",{
+        name:result.user.displayName,
+        email:result.user.email,
+        img: result.user.photoURL,
+      })
+      .then((res)=>{
+        dispatch(loginSuccess(res.data))
+        res.status = 200 && navigate(`/`)
     })
-    .catch((error)=>{});
+  })
+    .catch((error)=>{
+      dispatch(loginFailure())
+    });
   }
   return (
     <Container>

@@ -100,10 +100,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
             DevTube
           </Logo>
         </Link>
+        <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
         <Item>
-          <HomeIcon />
+        <HomeIcon />
           Home
         </Item>
+        </Link>    
         <Link to="trends" style={{textDecoration:"none", color:"inherit"}}>
         <Item>
           <ExploreOutlinedIcon />

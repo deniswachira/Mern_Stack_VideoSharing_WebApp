@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC6w0AcqEPBXRJiCl1gp1XTizCmNWUBkts",
+  apiKey: "your api key",
   authDomain: "video-778ff.firebaseapp.com",
-  projectId: "video-778ff",
+  projectId: "your project id",
   storageBucket: "video-778ff.appspot.com",
   messagingSenderId: "344651902210",
-  appId: "1:344651902210:web:21bbe6be5f9744e6c7e61b"
+  appId: "your app id"
 };
 
 // Initialize Firebase

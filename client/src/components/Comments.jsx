@@ -31,7 +31,7 @@ const Input = styled.input`
 const Comments = ({videoId}) => {
 
   const {currentUser} = useSelector((state)=> state.user);
-  const [comments, setComments] = useState({})
+  const [comments, setComments] = useState([])
 
   useEffect(()=>{
     const fetchComments = async ()=> {
@@ -47,12 +47,12 @@ const Comments = ({videoId}) => {
   return (
     <Container>
       <NewComment>
-        <Avatar src={currentUser.img} />
+        <Avatar src={currentUser?.img} />
         <Input placeholder="Add a comment..." />
       </NewComment>
-      {/* {comments.map((comment)=>(
+       {comments.map((comment)=>(
        <Comment key={comment._id} comment={comment}/>
-      ))} */}
+      ))}
       
     </Container>
   );
